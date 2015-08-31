@@ -1,0 +1,89 @@
+# Grunt aliases
+---
+# Get dependencies
+dependencies:
+  - bowercopy
+  - 'rename:normalize'
+  - 'rename:datatables'
+  # - 'composer:install'
+# Build everything
+build:
+  - dependencies
+  - 'build:local'
+'build:local':
+  - 'build:css'
+  - 'build:images'
+  - 'build:js'
+  - 'build:i18n'
+# Build CSS from SCSS to production
+'build:css':
+  - 'clean:tmpstyle'
+  - 'clean:style'
+  - 'build:icons'
+  - sass
+  - cmq
+  - 'mkdir:logs' # Make logs/ for autoprefixer report.
+  - autoprefixer
+  - wpcss
+  - 'replace:stylecomments'
+  - 'replace:datatablesimages'
+  # - stripmq # IE9 is min, which supports media queries
+  # - rtlcss # RTL styles not needed right now.
+  - cssmin
+  - usebanner
+  - 'copy:css'
+# Optimise images from source to production
+'build:images':
+  # - imageoptim # No config yet
+  - 'copy:images'
+  - 'copy:imagesdatatables'
+  - 'copy:screenshot'
+# Build JavaScript from assets to production
+'build:js':
+  - 'clean:js'
+  - concat
+  - uglify
+  - 'jsvalidate:theme'
+# Build internationalisation features
+'build:i18n':
+  # - 'addtextdomain'
+  - makepot
+# Check health of the project
+check:
+  - scsslint
+  - jshint
+  - jsonlint
+  - jsvalidate
+  - jscs
+  - checktextdomain
+  - phplint
+  - 'mkdir:logs' # Make logs/ for phpcs reports.
+  - phpcs
+# Pre-commit hook task
+commit:
+  - check
+# Default task
+default:
+  - dependencies
+  - develop
+develop:
+  - build
+  - styleguide
+styleguide:
+  - hologram
+  - connect
+  - watch
+newtheme:
+  - 'replace:packagename'
+  - 'build:full'
+# Package the distribution files into a zip
+package:
+  - 'build:full'
+  - 'compress:dist'
+# Package developer files into a zip
+'package:dev':
+  - 'build:full'
+  - 'compress:dev'
+# Update reports
+reports:
+  - plato
