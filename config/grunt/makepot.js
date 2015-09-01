@@ -7,7 +7,7 @@ module.exports = {
 			domainPath: '<%= paths.languages %>',
 			potHeaders: {
 				poedit: true,
-				'Report-Msgid-Bugs-To': '<%= pkg.bugs.url %>'
+				'Report-Msgid-Bugs-To': '<%= package.bugs.url %>'
 			},
 			type: 'wp-theme'
 		}

@@ -7,7 +7,7 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'log', function( releaseType ) {
 		var changelog,
 			semver     = require( 'semver' ),
-			newVersion = semver.valid( grunt.config( 'pkg.version' ) ),
+			newVersion = semver.valid( grunt.config( 'package.version' ) ),
 			// newVersion = semver.inc( grunt.config.get( 'pkg' ).version, releaseType ),
 			regex      = new RegExp( '^## ' + newVersion, 'gm' ); // Match the version number (e.g., "## 1.2.3")
 

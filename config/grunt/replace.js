@@ -24,7 +24,7 @@ module.exports = {
 		options: {
 			patterns: [{
 				match: 'release',
-				replacement: '<%= pkg.version %>'
+				replacement: '<%= package.version %>'
 			}]
 		},
 		files: [{
@@ -40,11 +40,11 @@ module.exports = {
 			patterns: [
 				{
 					match: /incipio/g,
-					replacement: '<%= pkg.name %>'
+					replacement: '<%= package.name %>'
 				},
 				{
 					match: /Incipio/g,
-					replacement: '<%= pkg.capitalname %>'
+					replacement: '<%= package.capitalname %>'
 				}
 			]
 		},

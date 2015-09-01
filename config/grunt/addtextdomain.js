@@ -3,7 +3,7 @@
 module.exports = {
 	options: {
 		// updateDomains: ['incipio'] // Hard-coded by default
-		textdomain: '<%= pkg.theme.textdomain %>'
+		textdomain: '<%= package.theme.textdomain %>'
 	},
 	php: {
 		files: {

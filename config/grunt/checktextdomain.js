@@ -2,7 +2,7 @@
 /*global module*/
 module.exports = {
 	options: {
-		text_domain: '<%= pkg.theme.textdomain %>',
+		text_domain: '<%= package.theme.textdomain %>',
 		keywords: [
 			'__:1,2d',
 			'_e:1,2d',
