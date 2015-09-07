@@ -1,5 +1,6 @@
 // https://github.com/SaschaGalley/grunt-phpcs
 /*global module*/
+/* Note that if phpcs.xml is present as it should be, the targets here are ignored. */
 module.exports = {
 	options: {
 		// Assumes 'phpcs' is accessible in the global system.
@@ -10,27 +11,6 @@ module.exports = {
 	full: {
 		options: {
 			reportFile: '<%= paths.logs %>phpcs-full.log'
-		},
-		src: [
-			'<%= paths.theme %>**/*.php'
-		]
-	},
-	info: {
-		options: {
-			showSniffCodes: true,
-			report: 'info',
-			reportFile: '<%= paths.logs %>phpcs-info.log',
-			standard: 'Generic,PEAR,Squiz,PSR2,Zend'
-		},
-		src: [
-			'<%= paths.theme %>**/*.php'
-		]
-	},
-	source: {
-		options: {
-			report: 'source',
-			reportFile: '<%= paths.logs %>phpcs-source.log',
-			showSniffCodes: true
 		},
 		src: [
 			'<%= paths.theme %>**/*.php'

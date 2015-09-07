@@ -4,8 +4,7 @@
 dependencies:
   - bowercopy
   - 'rename:normalize'
-#  - 'rename:datatables'
-  # - 'composer:install'
+  - 'composer:install'
 # Build everything
 build:
   - dependencies
@@ -25,15 +24,14 @@ build:
   - 'mkdir:logs' # Make logs/ for autoprefixer report.
   - postcss
 #  - 'replace:stylecomments'
-  # - rtlcss # RTL styles not needed right now.
-#  - cssmin
-#  - usebanner
-#  - 'copy:css'
+  - rtlcss # RTL styles not needed right now.
+  - cssmin
+  - usebanner
+  - 'copy:css'
 # Optimise images from source to production
 'build:images':
-  # - imageoptim # No config yet
+#  - imageoptim # No config yet
   - 'copy:images'
-  - 'copy:imagesdatatables'
   - 'copy:screenshot'
 # Build JavaScript from assets to production
 'build:js':
@@ -43,7 +41,7 @@ build:
   - 'jsvalidate:theme'
 # Build internationalisation features
 'build:i18n':
-  # - 'addtextdomain'
+#  - 'addtextdomain'
   - makepot
 # Check health of the project
 check:
