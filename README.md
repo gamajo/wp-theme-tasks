@@ -34,3 +34,82 @@ While this package provides Grunt configurations for themes, it can also self-ch
     ```sh
     $ grunt
     ```
+
+## Theme `package.json`
+
+A typical theme `package.json` file may look like:
+
+```js
+{
+  "name": "gamajo",
+  "capitalname": "Gamajo",
+  "version": "1.0.0",
+  "private": true,
+  "theme": {
+    "name": "Gamajo",
+    "uri": "https://gamajo.com/",
+    "description": "Gamajo, Genesis Framework child theme for gamajo.com.",
+    "author": "Gary Jones, Gamajo Tech",
+    "authoruri": "https://gamajo.com",
+    "tags": "",
+    "license": "GPL-2.0+",
+    "licenseuri": "http://www.gnu.org/licenses/gpl-2.0.html",
+    "template": "genesis",
+    "textdomain": "gamajo",
+    "domainpath": "/languages"
+  },
+  "devDependencies": {
+    "load-cedaro-grunt-config": "cedaro/load-cedaro-grunt-config#develop",
+    "wp-theme-tasks": "gamajo/wp-theme-tasks#master"
+  }
+}
+```
+
+Note the `devDependencies` - one dependency that loads Grunt configs, and one dependency that includes *this* Grunt config.
+
+## Theme `Gruntfile.js`
+
+A typical `Gruntfile.js` should look something like:
+
+```js
+/*jshint require,node:true */
+/*global module*/
+module.exports = function( grunt ) {
+	'use strict';
+
+	var config = require( 'wp-theme-tasks' );
+	require( 'load-cedaro-grunt-config' )( grunt, config ).init();
+};
+```
+
+### Overrides
+
+You can override the default configuration of wp-theme-tasks, to customise it for your own theme. Your `Gruntfile.js` might look something like:
+
+```js
+/*jshint require,node:true */
+/*global module*/
+module.exports = function( grunt ) {
+	'use strict';
+
+	var config = require( 'wp-theme-tasks' );
+
+	// Merge in extra settings.
+	config.settings({
+		paths: {
+			foo: 'bar'
+		},
+		files: {
+			'yaml': '**/*.yml'
+		}
+	});
+
+	// Merge in task map settings for additional grunt packages.
+	config.taskMap({
+		sometask: 'grunt-differenttask'
+	});
+
+	require( 'load-cedaro-grunt-config' )( grunt, config ).init();
+};
+
+```
