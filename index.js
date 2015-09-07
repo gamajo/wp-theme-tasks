@@ -30,6 +30,7 @@ module.exports = function() {
 
 	project.taskMap = {
 		addtextdomain: 'grunt-wp-i18n',
+		cmq:           'grunt-combine-media-queries',
 		makepot:       'grunt-wp-i18n',
 		replace:       'grunt-text-replace',
 		scsslint:      'grunt-scss-lint',
@@ -55,7 +56,8 @@ module.exports = function() {
 			'!logs/**',
 			'!bower_components/**',
 			'!node_modules/**',
-			'!tmp/**'
+			'!tmp/**',
+			'!theme/vendor/**'
 		],
 		changelog: 'CHANGELOG.md'
 	};

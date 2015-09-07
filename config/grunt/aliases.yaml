@@ -4,7 +4,7 @@
 dependencies:
   - bowercopy
   - 'rename:normalize'
-  - 'rename:datatables'
+#  - 'rename:datatables'
   # - 'composer:install'
 # Build everything
 build:
@@ -19,19 +19,16 @@ build:
 'build:css':
   - 'clean:tmpstyle'
   - 'clean:style'
-  - 'build:icons'
   - sass
   - cmq
-  - 'mkdir:logs' # Make logs/ for autoprefixer report.
-  - autoprefixer
   - wpcss
-  - 'replace:stylecomments'
-  - 'replace:datatablesimages'
-  # - stripmq # IE9 is min, which supports media queries
+  - 'mkdir:logs' # Make logs/ for autoprefixer report.
+  - postcss
+#  - 'replace:stylecomments'
   # - rtlcss # RTL styles not needed right now.
-  - cssmin
-  - usebanner
-  - 'copy:css'
+#  - cssmin
+#  - usebanner
+#  - 'copy:css'
 # Optimise images from source to production
 'build:images':
   # - imageoptim # No config yet
@@ -75,14 +72,14 @@ styleguide:
   - watch
 newtheme:
   - 'replace:packagename'
-  - 'build:full'
+  - 'build'
 # Package the distribution files into a zip
 package:
-  - 'build:full'
+  - 'build'
   - 'compress:dist'
 # Package developer files into a zip
 'package:dev':
-  - 'build:full'
+  - 'build'
   - 'compress:dev'
 # Update reports
 reports:
