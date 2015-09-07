@@ -30,6 +30,7 @@
     "grunt-colorguard": "^0.2.0",
     "grunt-combine-media-queries": "^1.0.19",
     "grunt-complexity": "^0.3.0",
+    "grunt-composer": "^0.4.4",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-compress": "^0.13.0",
     "grunt-contrib-concat": "^0.5.1",
@@ -63,13 +64,13 @@
     "grunt-wp-css": "^0.2.0",
     "grunt-wp-i18n": "^0.5.3",
     "postcss-reporter": "^1.1.0",
+    "semver": "^5.0.1",
     "stylelint": "^1.0.1",
     "stylelint-config-wordpress": "^0.2.0",
-    "semver": "^5.0.1",
     "time-grunt": "^1.2.1"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:GaryJones/incipio.git"
+    "url": "git@github.com:Gamajo/wp-theme-tasks.git"
   }
 }
