@@ -13,10 +13,5 @@ module.exports = {
 		files: {
 			src: ['<%= paths.theme %>js/{,*/}*.js']
 		}
-	},
-	grunt: {
-		files: {
-			src: ['<%= files.grunt %>', '<%= files.config %>']
-		}
 	}
 };
