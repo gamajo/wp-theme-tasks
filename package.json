@@ -36,6 +36,7 @@
     "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-copy": "^0.8.1",
     "grunt-contrib-cssmin": "^0.13.0",
+    "grunt-csscomb": "^3.1.0",
     "grunt-contrib-imagemin": "^0.9.4",
     "grunt-contrib-jshint": "^0.11.2",
     "grunt-contrib-rename": "^0.0.3",
