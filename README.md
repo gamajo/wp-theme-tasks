@@ -6,10 +6,16 @@ Built upon the work done by Brady Vercher at [Cedaro WordPress Theme Configurati
 
 ## NPM 3 Required
 
-This package requires NPM 3 to install. NPM 3 is still currently in beta, so to install, use:
+This package requires NPM 3 to install. NPM 3 is (was?) still currently in beta, so to install, use:
 
 ```
 $ npm install -g npm@3.0-latest
+```
+
+When it's out of beta then you should update to the latest version:
+
+```
+$ npm update npm -g
 ```
 
 NPM 3 doesn't support peerDependencies, but does install dependencies in a flattened model.
@@ -113,3 +119,7 @@ module.exports = function( grunt ) {
 };
 
 ```
+
+## Stability
+
+Since this is still a work in progress, consider it 0.something, and therefore not stable.
